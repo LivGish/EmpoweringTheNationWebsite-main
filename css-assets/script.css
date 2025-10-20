@@ -1,0 +1,104 @@
+/*CODE ATTRIBUTION*/
+/*TITLE: IIE WEDE5020 Module Manual 2025*/
+/*AUTHOR: The Independent Institute of Education (Pty) Ltd*/
+/*DATE: 07/03/2025*/
+/*VERSION: 1.0*/
+/*AVAILABLE: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7B2D7589E9-374B-43DE-9596-EF35D83EBD02%7D&file=WEDE5020MM.docx&action=default&mobileredirect=true*/
+
+/*CODE ATTRIBUTION*/
+/*TITLE: movieWeb*/
+/*AUTHOR: afsaana03*/
+/*DATE: 26/09/2025*/
+/*VERSION: 1.7*/
+/*AVAILABLE: https://github.com/afsaana03/movieWeb*/
+
+/*CODE ATTRIBUTION*/
+/*TITLE: CSS Styling Buttons*/
+/*AUTHOR: W3 schools*/
+/*DATE: 29/09/2025*/
+/*VERSION: 1.0*/
+/*AVAILABLE: https://www.w3schools.com/css/css3_buttons.asp*/
+
+/*Navigation bar styling*/
+.nav {
+    list-style-type: none; /*removes bullet points*/
+    margin: 0; /*resets margins*/
+    padding: 0; /*reses padding*/
+    background: #92c3a5; /*sets background*/
+    overflow: hidden;
+    border-bottom: 0.0625rem solid #595959; /*underlines the section*/
+    display: flex; /*flex allows menu alignment to be controlled*/
+    flex-wrap: wrap; /*pushes menu to new line on smaller screens*/
+    align-items: center; /*puts menu items in the center of the bar*/
+    justify-content: center; /*adds space between menu items*/
+}
+
+ul.nav li a {
+    color: #ffffff; /*text colour*/
+    text-decoration: none;  /* Removes the underline from the links */
+    display: flex; /*flex allows menu alignment to be controlled*/
+    padding: 0.875rem 1.25rem; /*Adds spacing around the link for a box*/
+    transition: background-color 0.3s, color 0.3s; /*block transition when you hover over different menu items*/
+}
+
+ul.nav li a:hover {
+    background-color: #4b9960; /*box changes colour when you hover over menu item*/
+    color: #ffffff; /*text colour*/
+    border-radius: 0.5rem; /*rounds corners on hover box*/
+}
+
+ul.nav p {
+    color: #ffffff; /*text colour*/
+    text-decoration: none;  /* Removes the underline from the links */
+    display: flex; /*flex allows menu alignment to be controlled*/
+    padding: 0.875rem 1.25rem; /*Adds spacing around the link for a box*/
+    font-weight: bold; /*makes font bold*/
+    transition: background-color 0.3s, color 0.3s; /*block transition when you hover over different menu items*/
+}
+
+/*general styling*/
+body { 
+    font-family: Georgia, serif; /*sets the website font*/
+    background-color: #fffff7; /*sets the backround colour*/
+    margin: 0%; /*resets margins*/
+    padding: 0%; /*resets padding*/
+    color: #595959; /*text colour*/
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    text-align: left; /*sets all text to the left of the screen*/
+    margin: 0%; /*resets margins*/
+    padding-left: 2rem; /*stops text from touching the left screen side*/
+    padding-right: 2rem; /*stops text from touching the right screen side*/
+}
+
+html {
+    padding-bottom: 2rem; /*adds padding to the bottom of the page*/
+}
+
+/*button styling*/
+.buttonContainer {
+    display: flex; /*flex allows menu alignment to be controlled*/
+    justify-content: center;
+    align-items: center; /*puts item in the center of the container*/
+    padding: 1rem; /*adds padding to the bottom of the container*/
+}
+
+button {
+    padding: 0.7rem 1.5rem; /*adds padding to the sides of the button*/
+    background-color: #92c3a5; /*sets the backround colour*/
+    font-family: Georgia, serif; /*sets the website font*/
+    color: #fff;  /*text colour*/
+    border: 0.0625rem solid #92c3a5; /*sets the border thickness and colour*/
+    border-radius: 0.5rem; /*rounds the button corners*/
+    cursor: pointer; /*changes the default pointer*/
+    font-weight: bold; /*makes the text bold*/
+    transition: background-color 0.3s; /*adds a colour transition*/
+}
+
+button:hover {
+    background-color: #4b9960; /*sets the backround colour*/
+    border: 0.0625rem solid #4b9960; /*sets the border thickness and colour*/
+    color: #fff; /*text colour*/
+    transition: background-color 0.3s; /*adds a colour transition*/
+}
