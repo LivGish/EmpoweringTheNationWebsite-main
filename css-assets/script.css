@@ -59,7 +59,6 @@ ul.nav p {
 /*general styling*/
 body { 
     font-family: Georgia, serif; /*sets the website font*/
-    /* Background image with fallback color */
     background-color: #fffff7; /*background colour*/
     background-image: url("../_images/background.png");
     background-repeat: no-repeat;
@@ -110,6 +109,7 @@ button:hover {
     transition: background-color 0.3s; /*adds a colour transition*/
 }
 
+/*section styling*/
 .section {
     display: inline-flex; /*allow sections to sit side-by-side*/
     flex-wrap: wrap; /*pushes to new line on smaller screens*/
@@ -134,6 +134,7 @@ button:hover {
     padding-bottom: 0.5rem; /*space below the list*/
 }
 
+/*homepage info block styling*/
 .infoContainer {
     display: flex; /*use flex so info cards sit horizontally*/
     flex-wrap: wrap; /*wrap to next line on smaller screens*/
@@ -156,8 +157,8 @@ button:hover {
     display: flex; /*flex allows menu alignment to be controlled*/
     flex-wrap: wrap; /*pushes menu to new line on smaller screens*/
     align-items: center; /*puts menu items in the center of the bar*/
-    justify-content: center; 
-    text-align: center;
+    justify-content: center; /*horizontally center items*/
+    text-align: center; /*centers text inside the card container*/
     padding: 1rem; /*adds space around the cards*/
     gap: 1rem; /*adds space between menu items*/
 }
@@ -169,7 +170,7 @@ button:hover {
     border-radius: 0.75rem; /*rounds the cards on the images*/
     padding: 1.25rem; /*Adds spacing around the card contents*/
     transition: transform 0.2s, box-shadow 0.2s;
-    box-sizing: border-box;
+    box-sizing: border-box; /*includes padding and border in the element's total width and height*/
     width: 40%; /*sets the card width*/
     height: 32rem;
 }
@@ -190,9 +191,36 @@ button:hover {
     max-width: 100%; /*prevent overflow*/
 }
 
+/*title styling*/
 .title {
     color: #568366;
     padding-bottom: 0.5rem;
     border-bottom: 0.1rem solid #568366; /*border colour*/
 
 }
+/*contact page styling*/
+.location {
+    display: inline-flex; /*allow sections to sit side-by-side*/
+    flex-wrap: wrap; /*pushes to new line on smaller screens*/
+    flex-direction: column; /*stack items vertically*/
+    justify-content: center; /*horizontally center items*/
+    vertical-align: top; /*align inline-flex boxes to the top*/
+    text-align: left; /*left-align text inside each section*/
+    padding: 1rem; /*adds 1rem space inside the location box*/
+    gap: 1rem; /*adds space between items*/
+    margin: 1rem; /*external space so adjacent borders don't touch*/
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 0.1rem solid #568366; /*border colour*/
+    box-sizing: border-box;
+    width: 27.5rem; /*sets the card width*/
+}
+
+.location h4 {
+    font-weight: normal;
+    margin: 0.25rem 0;
+}
+
+.location h4 strong {
+    font-weight: bold;
+}
+
