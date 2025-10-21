@@ -68,7 +68,7 @@ body {
     background-size: cover; /*cover viewport while preserving aspect ratio*/
     margin: 0%; /*resets margins*/
     padding: 0%; /*resets padding*/
-    color: #595959; /*text colour*/
+    color: #568366; /*text colour*/
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -113,7 +113,8 @@ button:hover {
 .section {
     display: inline-flex; /*allow sections to sit side-by-side*/
     flex-wrap: wrap; /*pushes to new line on smaller screens*/
-    align-items: center; /*puts items in the center of the bar*/
+    flex-direction: column;
+    align-items: left; /*puts items in the center of the bar*/
     justify-content: center; /*horizontally center items*/
     vertical-align: top; /*align inline-flex boxes to the top*/
     text-align: left; /*centers text inside each section*/
@@ -129,8 +130,8 @@ button:hover {
     text-align: left;
     padding-left: 1.25rem; /* indent the list */
     margin: 0.5rem 0; /* space above/below list */
-    list-style-position: outside;
-    padding-bottom: 0.5rem;
+    list-style-position: outside; /*ensures bullets are outside the padding*/
+    padding-bottom: 0.5rem; /*space below the list*/
 }
 
 .infoContainer {
@@ -138,6 +139,7 @@ button:hover {
     flex-wrap: wrap; /*wrap to next line on smaller screens*/
     align-items: center; /*vertically center items*/
     background-color: #fdffee; /*sets the background colour*/
+    color: #3d3d3d;
     justify-content: left; /*horizontally center items*/ 
     gap: 0.25rem; /*space between info cards*/
     width: 90%
@@ -161,6 +163,7 @@ button:hover {
 }
 
 .card {
+    text-align: center; /*centers text inside each card*/
     background-color: #ffffff; /*sets the backround colour*/
     border: 0.0625rem solid #595959; /*border colour*/
     border-radius: 0.75rem; /*rounds the cards on the images*/
@@ -171,12 +174,11 @@ button:hover {
     height: 32rem;
 }
 
-/* Lists inside cards: left-align and add indentation */
 .card ul {
-    text-align: left;
+    text-align: left; /*left-aligns the list inside the card*/
     padding-left: 1.25rem; /* indent the list */
     margin: 0.5rem 0; /* space above/below list */
-    list-style-position: outside;
+    list-style-position: outside; /*ensures bullets are outside the padding*/
     padding-bottom: 0.5rem;
 }
 
@@ -186,4 +188,11 @@ button:hover {
     display: inline-block; /*ensure margins apply consistently*/
     margin: 0.5rem; /*space around the image so it doesn't touch text*/
     max-width: 100%; /*prevent overflow*/
+}
+
+.title {
+    color: #568366;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #568366; /*border colour*/
+
 }
