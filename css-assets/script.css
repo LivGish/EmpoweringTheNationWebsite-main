@@ -314,3 +314,94 @@ input, textarea {
     content: "";
     margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+.nav {
+    flex-direction: column; /*makes menu items stack vertically on small screens*/
+    align-items: center; /*puts menu items in the center of the bar*/
+}
+    
+    /* child-minding page: keep main headings centered but left-align body text on small screens */
+    .detail p,
+    .detail ul,
+    .detail li,
+    .detail .title h3,
+    .detail .title h4 {
+        text-align: left;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+h1, h2, h3, h4, h5, h6, p {
+    padding-left: 1rem; /*stops text from touching the left screen side*/
+    padding-right: 1rem; /*stops text from touching the right screen side*/
+}
+
+html {
+    font-size: 70%;
+    padding-bottom: 2rem; /*adds padding to the bottom of the page*/
+}
+
+.card {
+    padding: 1.25rem; /*Adds spacing around the card contents*/
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /*includes padding and border in the element's total width and height*/
+    width: 40%; /*sets the card width*/
+    height: 40rem;
+}
+
+.section {
+    display: flex; /* use flex to center children easily */
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center children horizontally */
+    justify-content: flex-start; /* keep content starting at top */
+    width: 100%; /* full width on small screens */
+    box-sizing: border-box;
+    margin-bottom: 1rem; /* spacing between stacked sections */
+    padding-left: 1rem; /* slightly reduce left padding on mobile */
+    padding-right: 1rem; /* slightly reduce right padding on mobile */
+}
+
+.section h1, h2 {
+    text-align: center; /* center inline text inside the section */
+}
+
+.section h3, h4, h5, h6, p {
+    text-align: left; /*left-align text inside each section*/
+}
+
+button {
+    padding: 0.5rem 0.75rem; /*adds padding to the sides of the button*/
+}
+
+.info {
+    gap: 0.5rem; /*space between image and text*/
+}
+
+.quoteSection {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center children horizontally */
+    justify-content: flex-start;
+    width: 100%; /* full width on small screens */
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
+    border-right: none; /* remove right border on mobile */
+    margin-bottom: 1rem;
+}
+
+.title {
+    width: 80%;
+    text-align: center;
+    color: #568366;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #568366; /*border colour*/
+}
+
+.location {
+    width: 68%;
+}
+}
