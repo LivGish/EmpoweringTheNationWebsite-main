@@ -59,7 +59,13 @@ ul.nav p {
 /*general styling*/
 body { 
     font-family: Georgia, serif; /*sets the website font*/
-    background-color: #fffff7; /*sets the backround colour*/
+    /* Background image with fallback color */
+    background-color: #fffff7; /*background colour*/
+    background-image: url("../_images/background.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover; /*cover viewport while preserving aspect ratio*/
     margin: 0%; /*resets margins*/
     padding: 0%; /*resets padding*/
     color: #595959; /*text colour*/
@@ -82,6 +88,7 @@ html {
     justify-content: center;
     align-items: center; /*puts item in the center of the container*/
     padding: 1rem; /*adds padding to the bottom of the container*/
+    gap: 1rem; /*space between buttons while keeping them centered*/
 }
 
 button {
@@ -101,4 +108,82 @@ button:hover {
     border: 0.0625rem solid #4b9960; /*sets the border thickness and colour*/
     color: #fff; /*text colour*/
     transition: background-color 0.3s; /*adds a colour transition*/
+}
+
+.section {
+    display: inline-flex; /*allow sections to sit side-by-side*/
+    flex-wrap: wrap; /*pushes to new line on smaller screens*/
+    align-items: center; /*puts items in the center of the bar*/
+    justify-content: center; /*horizontally center items*/
+    vertical-align: top; /*align inline-flex boxes to the top*/
+    text-align: left; /*centers text inside each section*/
+    padding: 1rem; /*adds space around the cards*/
+    gap: 1rem; /*adds space between items*/
+    padding: 1.25rem; /*Adds spacing around section contents*/
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    width: 49%; /*sets the card width*/
+}
+
+.section ul {
+    text-align: left;
+    padding-left: 1.25rem; /* indent the list */
+    margin: 0.5rem 0; /* space above/below list */
+    list-style-position: outside;
+    padding-bottom: 0.5rem;
+}
+
+.infoContainer {
+    display: flex; /*use flex so info cards sit horizontally*/
+    flex-wrap: wrap; /*wrap to next line on smaller screens*/
+    align-items: center; /*vertically center items*/
+    background-color: #fdffee; /*sets the background colour*/
+    justify-content: left; /*horizontally center items*/ 
+    gap: 0.25rem; /*space between info cards*/
+    width: 90%
+}
+
+.info {
+    display: flex; /*layout image and text horizontally*/
+    align-items: center; /*center image and text vertically*/
+    gap: 1rem; /*space between image and text*/
+}
+
+/*card styling*/
+.cardContainer {
+    display: flex; /*flex allows menu alignment to be controlled*/
+    flex-wrap: wrap; /*pushes menu to new line on smaller screens*/
+    align-items: center; /*puts menu items in the center of the bar*/
+    justify-content: center; 
+    text-align: center;
+    padding: 1rem; /*adds space around the cards*/
+    gap: 1rem; /*adds space between menu items*/
+}
+
+.card {
+    background-color: #ffffff; /*sets the backround colour*/
+    border: 0.0625rem solid #595959; /*border colour*/
+    border-radius: 0.75rem; /*rounds the cards on the images*/
+    padding: 1.25rem; /*Adds spacing around the card contents*/
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    width: 40%; /*sets the card width*/
+    height: 32rem;
+}
+
+/* Lists inside cards: left-align and add indentation */
+.card ul {
+    text-align: left;
+    padding-left: 1.25rem; /* indent the list */
+    margin: 0.5rem 0; /* space above/below list */
+    list-style-position: outside;
+    padding-bottom: 0.5rem;
+}
+
+.card img {
+    border-radius: 1rem; /*rounds the corners on the images*/
+    border: 0.0625rem solid #595959; /*border colour*/
+    display: inline-block; /*ensure margins apply consistently*/
+    margin: 0.5rem; /*space around the image so it doesn't touch text*/
+    max-width: 100%; /*prevent overflow*/
 }
