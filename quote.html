@@ -20,30 +20,25 @@
 
         <br>
 
-           <h1>Calculate total fees</h1>
+           <h2>Calculate total fees</h2>
 
-           <br>
+            <div class="quoteSection">
+                <h2 class="title">Step 1: enter contact details</h2>
 
-            <div class="section">
-                <h2 class="title"> Step 1: enter your contact details</h2>
-            
                 <form>
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" required>
 
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label for="number">Phone Number:</label>
+                    <input type="number" id="number" name="number" required>
 
                     <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email" required>
 
                     <div class="buttonContainer">
-                    <a class="button" type="Submit">
-                    <button>Submit details</button>
-                    </a>
+                        <button type="submit" class="button">Submit details</button>
+                    </div>
                 </form>
-
-                <br>
 
                 <h3>Discounts available</h3>
                 <ul>
@@ -53,63 +48,53 @@
                     <li>4+ courses: 15% discount</li>
                 </ul>
 
-            </div>
-
-            <div class="section">
                 <h2 class="title">Step 2: select your courses</h2>
 
                 <form>
-                    <h3>6-month courses:</h3>
-                    <input type="checkbox" id="first-aid" name="course" value="1500">
-                    <label for="first-aid">First Aid (R1500.00)</label><br>
+                    <div class="checkbox">
+                        <h3>6-month courses:</h3>
+                        <br>
+                        <div class="checkbox-row"><label><input type="checkbox" id="first-aid" name="course" value="1500"> First Aid (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="sewing" name="course" value="1500"> Sewing (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="landscaping" name="course" value="1500"> Landscaping (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="life-skills" name="course" value="1500"> Life Skills (R1500.00)</label></div>
 
-                    <input type="checkbox" id="sewing" name="course" value="1500">
-                    <label for="sewing">Sewing (R1500.00)</label><br>
+                        <br><br>
 
-                    <input type="checkbox" id="landscaping" name="course" value="1500">
-                    <label for="landscaping">Landscaping (R1500.00)</label><br>
-
-                    <input type="checkbox" id="life-skills" name="course" value="1500">
-                    <label for="life-skills">Life Skills (R1500.00)</label><br>
-
-                    <br>
-                    <h3>6-week courses:</h3>
-
-                    <input type="checkbox" id="child-minding" name="course" value="750">
-                    <label for="child-minding">Child Minding (R750.00)</label><br>
-
-                    <input type="checkbox" id="cooking" name="course" value="750">
-                    <label for="cooking">Cooking (R750.00)</label><br>
-
-                    <input type="checkbox" id="garden-maintenance" name="course" value="750">
-                    <label for="garden-maintenance">Garden Maintenance (R750.00)</label><br>
-
-                    <div class="buttonContainer">
-                    <a class="button" type="Calculate">
-                    <button>Calculate total fee</button>
-                    </a>
+                        <h3>6-week courses:</h3>
+                        <br>
+                        <div class="checkbox-row"><label><input type="checkbox" id="child-minding" name="course" value="750"> Child Minding (R750.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="cooking" name="course" value="750"> Cooking (R750.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="garden-maintenance" name="course" value="750"> Garden Maintenance (R750.00)</label></div>
+                        <br>
+                        <div class="buttonContainer">
+                            <button type="button" class="button">Calculate total fee</button>
+                        </div>
+                    </div>
                 </form>
+            </div>
+
+            <div class="section">
+                <div class="title">
+                    <h2>Quote invoice</h2>
                 </div>
+                <div class="invoice">
+                    <h3>Customer details</h3>
+                    <ul>
+                        <li>Full name: [Customer Name]</li>
+                        <li>Phone number: [Customer Phone]</li>
+                        <li>Email address: [Customer Email]</li>
+                    </ul>
 
-                <div class="quote">
-                   <h2 class="title">Quote invoice</h2> 
-                   <div class="invoice">
-                        <h3>Customer details</h3>
-                        <ul>
-                            <li>Full name: [Customer Name]</li>
-                            <li>Phone number: [Customer Phone]</li>
-                            <li>Email address: [Customer Email]</li>
-                        </ul>
+                    <h3>Selected courses</h3>
+                    <ul>
+                        <li>[Course 1]</li>
+                        <li>[Course 2]</li>
+                        <li>[Course 3]</li>
+                    </ul>
 
-                        <h3>Selected courses</h3>
-                        <ul>
-                            <li>[Course 1]</li>
-                            <li>[Course 2]</li>
-                            <li>[Course 3]</li>
-                        </ul>   
-
-                        <h3>Cost breakdown:</h3>
-                        <ul>
+                    <h3>Cost breakdown:</h3>
+                    <ul>
                         <li>[course 1]: R[Subtotal amount]</li>
                         <li>[course 2]: R[Subtotal amount]</li>
                         <li>[course 3]: R[Subtotal amount]</li>
@@ -117,9 +102,9 @@
                         <li>Total (excl. VAT): R[Total no VAT]</li>
                         <li>VAT (15%): R[VAT amount]</li>
                         <li>Total (incl. VAT): R[Total with VAT]</li>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
+            </div>
 
     </body>
 </html>

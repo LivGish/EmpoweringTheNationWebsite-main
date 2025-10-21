@@ -131,6 +131,7 @@ button:hover {
     padding-left: 1.25rem; /* indent the list */
     margin: 0.5rem 0; /* space above/below list */
     list-style-position: outside; /*ensures bullets are outside the padding*/
+    list-style: none;
     padding-bottom: 0.5rem; /*space below the list*/
 }
 
@@ -191,13 +192,6 @@ button:hover {
     max-width: 100%; /*prevent overflow*/
 }
 
-/*title styling*/
-.title {
-    color: #568366;
-    padding-bottom: 0.5rem;
-    border-bottom: 0.1rem solid #568366; /*border colour*/
-
-}
 /*contact page styling*/
 .location {
     display: inline-flex; /*allow sections to sit side-by-side*/
@@ -215,6 +209,30 @@ button:hover {
     width: 27.5rem; /*sets the card width*/
 }
 
+/*checkbox styling*/
+.checkbox-row {
+    display: block;
+    margin: 0.35rem 0;
+}
+
+.checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+    margin: 0;
+}
+
+/*title styling*/
+.title {
+    color: #568366;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #568366; /*border colour*/
+
+}
+
 .location h4 {
     font-weight: normal;
     margin: 0.25rem 0;
@@ -224,3 +242,75 @@ button:hover {
     font-weight: bold;
 }
 
+/*form styling*/
+form {
+    display: flex; /*flex allows menu alignment to be controlled*/
+    flex-direction: column; /*stacks everything vertically*/
+    align-items: flex-start; /* Align elements to left */
+    margin: 1.25rem auto; /*adds a margin*/
+    width: 80%; /*sets the image width*/
+}
+
+input, textarea {
+    font-family: Georgia, serif; /*sets the  font*/
+    width: 100%; /*sets the image width*/
+    padding: 0.5rem; /*adds padding*/
+    margin-top: 0.25rem; /*adds a margin to the top*/
+    margin-bottom: 1rem; /*adds a margin to the top*/
+    border: 0.0625rem solid #568366; /*sets the border thickness and colour*/
+    background-color: #ffffff; /*sets the backround colour*/
+    color: #595959; /*text colour*/
+}
+
+/*section styling*/
+.quoteSection {
+    display: inline-flex; /*allow sections to sit side-by-side*/
+    flex-wrap: wrap; /*pushes to new line on smaller screens*/
+    flex-direction: column;
+    align-items: left; /*puts items in the center of the bar*/
+    justify-content: center; /*horizontally center items*/
+    vertical-align: top; /*align inline-flex boxes to the top*/
+    text-align: left; /*centers text inside each section*/
+    padding: 1rem; /*adds space around the cards*/
+    gap: 1rem; /*adds space between items*/
+    padding: 1.25rem; /*Adds spacing around section contents*/
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    border-right: #568366 0.05rem solid; /*left border colour and thickness*/
+    width: 49%; /*sets the card width*/
+}
+
+.quoteSection ul {
+    text-align: left;
+    padding-left: 1.25rem; /* indent the list */
+    margin: 0.5rem 0; /* space above/below list */
+    list-style-position: outside; /*ensures bullets are outside the padding*/
+    padding-bottom: 0.5rem; /*space below the list*/
+}
+
+.quoteSection form input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    transform: none;
+    margin-right: 0.5rem;
+    vertical-align: middle; /* align with label text */
+    display: inline-block;
+}
+
+.quoteSection form label {
+    display: inline-block; /* keep label on same line as checkbox */
+    vertical-align: middle;
+    margin-bottom: 0.5rem;
+}
+
+.quoteSection form label[for] {
+    max-width: calc(100% - 2.25rem); /* leave room for checkbox + gap */
+    line-height: 1.5rem; /* match checkbox height for vertical centering */
+    word-wrap: break-word;
+}
+
+.quoteSection form br {
+    display: block;
+    content: "";
+    margin-bottom: 0.5rem;
+}
