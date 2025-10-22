@@ -206,7 +206,38 @@ button:hover {
     transition: transform 0.2s, box-shadow 0.2s;
     border: 0.1rem solid #568366; /*border colour*/
     box-sizing: border-box;
-    width: 27.5rem; /*sets the card width*/
+    width: 100%; /* allow box to shrink on small screens */
+    max-width: 30%; /* sets the card max width */
+}
+
+/* wrapper for contact locations - centers boxes and allows wrapping */
+.locationContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center the location boxes horizontally */
+    gap: 1rem; /* space between boxes */
+    padding: 0 1rem; /* small horizontal padding */
+}
+
+.location {
+    margin: 0.75rem; /* balanced margin inside the centered wrapper */
+}
+
+.location h4 {
+    font-weight: normal;
+    margin: 0.25rem 0;
+}
+
+.location h4 strong { white-space: normal; }
+
+.location iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 20rem; /* allow iframe to resize proportionally */
+}
+
+.location h4 strong {
+    font-weight: bold;
 }
 
 /*checkbox styling*/
@@ -231,15 +262,6 @@ button:hover {
     padding-bottom: 0.5rem;
     border-bottom: 0.1rem solid #568366; /*border colour*/
 
-}
-
-.location h4 {
-    font-weight: normal;
-    margin: 0.25rem 0;
-}
-
-.location h4 strong {
-    font-weight: bold;
 }
 
 /*form styling*/
