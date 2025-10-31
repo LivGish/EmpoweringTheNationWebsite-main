@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Empowering the Nation | Fee calculator page </title>
+        <link rel="stylesheet" href="css-assets/script.css">
+    </head>
+    <body>
+        <header>
+            <ul class="nav">
+                <li><img src="_images/logo.png" alt="'Empowering the Nation' Logo" height="100"></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="6-monthcourses.html">6-month courses</a></li>
+                <li><a href="6-weekcourses.html">6-week courses</a></li>
+                <li><a href="quote.html">Course quote</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </header>   
+
+        <br>
+
+        <div class="buttonContainer">
+            <button type="button" class="button" id="backBtn">Return to previous screen</button>
+        </div>
+
+           <h2>Calculate total fees</h2>
+
+            <div class="quoteSection">
+                <h2 class="title">Step 1: enter contact details</h2>
+
+                <form>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="number">Phone Number:</label>
+                    <input type="number" id="number" name="number" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <div class="buttonContainer">
+                        <button type="submit" class="button">Submit details</button>
+                    </div>
+                </form>
+
+                <h3>Discounts available</h3>
+                <ul>
+                    <li>1 course: No discount</li>
+                    <li>2 courses: 5% discount</li>
+                    <li>3 courses: 10% discount</li>
+                    <li>4+ courses: 15% discount</li>
+                </ul>
+
+                <h2 class="title">Step 2: select your courses</h2>
+
+                <form>
+                    <div class="checkbox">
+                        <h3>6-month courses:</h3>
+                        <br>
+                        <div class="checkbox-row"><label><input type="checkbox" id="first-aid" name="course" value="1500" data-course="First Aid"> First Aid (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="sewing" name="course" value="1500" data-course="Sewing"> Sewing (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="landscaping" name="course" value="1500" data-course="Landscaping"> Landscaping (R1500.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="life-skills" name="course" value="1500" data-course="Life Skills"> Life Skills (R1500.00)</label></div>
+
+                        <br><br>
+
+                        <h3>6-week courses:</h3>
+                        <br>
+                        <div class="checkbox-row"><label><input type="checkbox" id="child-minding" name="course" value="750" data-course="Child Minding"> Child Minding (R750.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="cooking" name="course" value="750" data-course="Cooking"> Cooking (R750.00)</label></div>
+                        <div class="checkbox-row"><label><input type="checkbox" id="garden-maintenance" name="course" value="750" data-course="Garden Maintenance"> Garden Maintenance (R750.00)</label></div>
+                        <br>
+                        <div class="buttonContainer">
+                            <button type="button" class="button" id="calculateBtn">Calculate total fee</button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+
+            <div class="section">
+                <div class="title">
+                    <h2>Quote invoice</h2>
+                </div>
+                <div class="invoice">
+                    <h3>Customer details</h3>
+                    <ul>
+                        <li>Full name: <span id="inv-name">[Customer Name]</span></li>
+                        <li>Phone number: <span id="inv-phone">[Customer Phone]</span></li>
+                        <li>Email address: <span id="inv-email">[Customer Email]</span></li>
+                    </ul>
+
+                    <h3>Selected courses</h3>
+                    <ul id="inv-courses">
+                        <!-- dynamically populated -->
+                    </ul>
+
+                    <h3>Cost breakdown:</h3>
+                    <ul id="inv-breakdown">
+                        <!-- dynamically populated -->
+                    </ul>
+                </div>
+            </div>
+
+    </body>
+</html>
+
+<script src="js-assets/script.js"></script>
