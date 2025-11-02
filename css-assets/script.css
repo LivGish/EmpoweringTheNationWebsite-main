@@ -30,6 +30,12 @@
     justify-content: left; /*horizontally center items*/
 }
 
+/* Nav logo styling */
+.nav img {
+    height: 4rem !important; /*sets the logo height, override inline styles*/
+    width: 4rem !important; /*sets the logo width, override inline styles*/
+    object-fit: contain; /*prevents stretching while maintaining aspect ratio*/
+}
 /*Sidepanel styling*/
 .sidepanel {
   height: 100%; /* Specify a height */
@@ -106,6 +112,17 @@ html {
     padding-bottom: 2rem; /*adds padding to the bottom of the page*/
 }
 
+img {
+    max-width: 100%; /*prevents image overflow*/
+    height: auto; /*maintains aspect ratio*/
+    object-fit: contain; /*prevents stretching on large screens*/
+}
+
+.section img {
+    width: 90%;
+    height: auto;
+}
+
 /*button styling*/
 .buttonContainer {
     display: flex; /*flex allows menu alignment to be controlled*/
@@ -175,7 +192,15 @@ button:hover {
 .info {
     display: flex; /*layout image and text horizontally*/
     align-items: center; /*center image and text vertically*/
-    gap: 1rem; /*space between image and text*/
+    padding: 1.25rem;
+}
+
+/* Info section icons styling */
+.info img {
+    height: 4rem !important; /*control icon size, override inline styles*/
+    width: auto !important; /*maintain aspect ratio, override inline styles*/
+    object-fit: contain; /*prevent stretching*/
+    flex-shrink: 0; /*prevent icons from shrinking*/
 }
 
 /*card styling*/
@@ -198,7 +223,7 @@ button:hover {
     transition: transform 0.2s, box-shadow 0.2s;
     box-sizing: border-box; /*includes padding and border in the element's total width and height*/
     width: 40%; /*sets the card width*/
-    height: 32rem;
+    height:40rem;
 }
 
 .card ul {
@@ -214,7 +239,9 @@ button:hover {
     border: 0.0625rem solid #595959; /*border colour*/
     display: inline-block; /*ensure margins apply consistently*/
     margin: 0.5rem; /*space around the image so it doesn't touch text*/
-    max-width: 100%; /*prevent overflow*/
+    max-width: 90%; /*prevent overflow*/
+    height: auto; /*maintains aspect ratio*/
+    object-fit: contain; /*prevents stretching on large screens*/
 }
 
 /*contact page styling*/
@@ -295,12 +322,12 @@ form {
     flex-direction: column; /*stacks everything vertically*/
     align-items: flex-start; /* Align elements to left */
     margin: 1.25rem auto; /*adds a margin*/
-    width: 80%; /*sets the image width*/
+    width: 80%; /*sets the form width*/
 }
 
 input, textarea {
     font-family: Georgia, serif; /*sets the  font*/
-    width: 100%; /*sets the image width*/
+    width: 100%; /*sets the width*/
     padding: 0.5rem; /*adds padding*/
     margin-top: 0.25rem; /*adds a margin to the top*/
     margin-bottom: 1rem; /*adds a margin to the top*/
@@ -467,4 +494,21 @@ button {
     max-width: 100%;
     padding: 0.5rem;
 }
+}
+
+@media screen and (min-width: 1110px) {
+.card {
+    padding: 2.5rem; /*Adds spacing around the card contents*/
+    width: 40%; /*sets the card width*/
+    height:65rem;
+}
+
+.card img {
+
+    display: inline-block; /*ensure margins apply consistently*/
+    margin: 1rem; /*space around the image so it doesn't touch text*/
+    width: 40rem; /*prevent overflow*/
+    height: auto; /*maintains aspect ratio*/
+    object-fit: contain; /*prevents stretching on large screens*/
+}  
 }

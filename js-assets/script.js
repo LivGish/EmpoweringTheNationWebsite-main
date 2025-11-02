@@ -8,29 +8,30 @@
 // This line runs when the JS file is loaded 
 console.log("JavaScript is up and running!")
 
-// Add Back button handler (uses history.back with intelligent fallback)
+// Add Back button handler (uses history.back with a homepage fallback)
 document.addEventListener('DOMContentLoaded', function () {
 	const backBtn = document.getElementById('backBtn');
 	if (!backBtn) return;
 	backBtn.addEventListener('click', function () {
-		// Check if we can go back in history
+		// If there's a previous entry in the history, go back. Otherwise go to homepage.html
 		if (window.history && window.history.length > 1) {
-			// Use the browser's back functionality
 			window.history.back();
+			// Some browsers may not navigate if no real previous page; set a short timeout fallback
+			setTimeout(() => {
+				if (document.visibilityState === 'visible') {
+					window.location.href = 'homepage.html';
+				}
+			}, 250);
 		} else {
-			// Only use fallback if there's truly no history
-			// Try to determine which course page to return to based on current page
-			const currentPage = window.location.pathname.toLowerCase();
-			
-			if (currentPage.includes('life-skills') || currentPage.includes('first-aid') || currentPage.includes('sewing') || currentPage.includes('landscaping')) {
-				window.location.href = '6-monthcourses.html';
-			} else if (currentPage.includes('child-minding') || currentPage.includes('cooking') || currentPage.includes('garden-maintenance')) {
-				window.location.href = '6-weekcourses.html';
-			} else {
-				window.location.href = 'homepage.html';
-			}
+			window.location.href = 'homepage.html';
 		}
 	});
+});
+
+
+// Back button functionality
+document.getElementById('backBtn').addEventListener('click', function() {
+    window.history.back();
 });
 
 // Store customer details
@@ -40,30 +41,25 @@ let customerDetails = {
     email: ''
 };
 
-// Handle contact details form submission (only if form exists)
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent page reload
-        
-        // Get form values
-        customerDetails.name = document.getElementById('name').value;
-        customerDetails.phone = document.getElementById('number').value;
-        customerDetails.email = document.getElementById('email').value;
-        
-        // Update invoice with customer details
-        document.getElementById('inv-name').textContent = customerDetails.name;
-        document.getElementById('inv-phone').textContent = customerDetails.phone;
-        document.getElementById('inv-email').textContent = customerDetails.email;
-        
-        alert('Details saved! Now select your courses and click "Calculate total fee"');
-    });
-}
+// Handle contact details form submission
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+    
+    // Get form values
+    customerDetails.name = document.getElementById('name').value;
+    customerDetails.phone = document.getElementById('number').value;
+    customerDetails.email = document.getElementById('email').value;
+    
+    // Update invoice with customer details
+    document.getElementById('inv-name').textContent = customerDetails.name;
+    document.getElementById('inv-phone').textContent = customerDetails.phone;
+    document.getElementById('inv-email').textContent = customerDetails.email;
+    
+    alert('Details saved! Now select your courses and click "Calculate total fee"');
+});
 
-// Calculate button functionality (only if button exists)
-const calculateBtn = document.getElementById('calculateBtn');
-if (calculateBtn) {
-    calculateBtn.addEventListener('click', function() {
+// Calculate button functionality
+document.getElementById('calculateBtn').addEventListener('click', function() {
     // Check if customer details are filled
     if (!customerDetails.name || !customerDetails.phone || !customerDetails.email) {
         alert('Please submit your contact details first!');
@@ -102,11 +98,7 @@ if (calculateBtn) {
     }
     
     discount = (total * discountPercent) / 100;
-    const totalAfterDiscount = total - discount;
-    
-    // Calculate VAT (15% of the discounted total)
-    const vatAmount = totalAfterDiscount * 0.15;
-    const finalTotal = totalAfterDiscount + vatAmount;
+    const finalTotal = total - discount;
     
     // Update invoice with selected courses
     const coursesList = document.getElementById('inv-courses');
@@ -123,15 +115,12 @@ if (calculateBtn) {
         <li>Subtotal: R${total.toFixed(2)}</li>
         <li>Number of courses: ${checkboxes.length}</li>
         <li>Discount (${discountPercent}%): -R${discount.toFixed(2)}</li>
-        <li><strong>Total before VAT: R${totalAfterDiscount.toFixed(2)}</strong></li>
-        <li>VAT (15%): R${vatAmount.toFixed(2)}</li>
-        <li><strong>Total including VAT: R${finalTotal.toFixed(2)}</strong></li>
+        <li><strong>Total amount due: R${finalTotal.toFixed(2)}</strong></li>
     `;
     
     // Scroll to invoice
     document.querySelector('.invoice').scrollIntoView({ behavior: 'smooth' });
   });
-}
 
 /* Set the width of the sidebar to 250px (show it) */
 function openNav() {
