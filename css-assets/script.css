@@ -21,19 +21,31 @@
 
 /*Navigation bar styling*/
 .nav {
-    list-style-type: none; /*removes bullet points*/
     margin: 0; /*resets margins*/
-    padding: 0; /*reses padding*/
     background: #92c3a5; /*sets background*/
     overflow: hidden;
-    border-bottom: 0.0625rem solid #595959; /*underlines the section*/
     display: flex; /*flex allows menu alignment to be controlled*/
-    flex-wrap: wrap; /*pushes menu to new line on smaller screens*/
     align-items: center; /*puts menu items in the center of the bar*/
-    justify-content: center; /*adds space between menu items*/
+    gap: 1rem; /*adds space between menu items*/
+    justify-content: left; /*horizontally center items*/
 }
 
-ul.nav li a {
+/*Sidepanel styling*/
+.sidepanel {
+  height: 100%; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #4b9960; /* Black*/
+  color: #fff;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+.sidepanel a{
     color: #ffffff; /*text colour*/
     text-decoration: none;  /* Removes the underline from the links */
     display: flex; /*flex allows menu alignment to be controlled*/
@@ -41,20 +53,33 @@ ul.nav li a {
     transition: background-color 0.3s, color 0.3s; /*block transition when you hover over different menu items*/
 }
 
-ul.nav li a:hover {
-    background-color: #4b9960; /*box changes colour when you hover over menu item*/
+.sidepanel a:hover {
+    background-color: #92c3a5; /*box changes colour when you hover over menu item*/
     color: #ffffff; /*text colour*/
-    border-radius: 0.5rem; /*rounds corners on hover box*/
+    border-radius: 0rem; /*rounds corners on hover box*/
 }
 
-ul.nav p {
-    color: #ffffff; /*text colour*/
-    text-decoration: none;  /* Removes the underline from the links */
-    display: flex; /*flex allows menu alignment to be controlled*/
-    padding: 0.875rem 1.25rem; /*Adds spacing around the link for a box*/
-    font-weight: bold; /*makes font bold*/
-    transition: background-color 0.3s, color 0.3s; /*block transition when you hover over different menu items*/
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 0.0625rem;
+  background-color: #92c3a5;
+  color: white;
+  padding: 2rem;
+  border: #92c3a5;
+}
+
+.openbtn:hover {
+  background-color: #92c3a5;
+} 
 
 /*general styling*/
 body { 
@@ -338,10 +363,6 @@ input, textarea {
 }
 
 @media screen and (max-width: 768px) {
-.nav {
-    flex-direction: column; /*makes menu items stack vertically on small screens*/
-    align-items: center; /*puts menu items in the center of the bar*/
-}
     
     /* child-minding page: keep main headings centered but left-align body text on small screens */
     .detail p,
