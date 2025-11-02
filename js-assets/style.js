@@ -28,12 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-
-// Back button functionality
-document.getElementById('backBtn').addEventListener('click', function() {
-    window.history.back();
-});
-
 // Store customer details
 let customerDetails = {
     name: '',
@@ -41,25 +35,30 @@ let customerDetails = {
     email: ''
 };
 
-// Handle contact details form submission
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-    
-    // Get form values
-    customerDetails.name = document.getElementById('name').value;
-    customerDetails.phone = document.getElementById('number').value;
-    customerDetails.email = document.getElementById('email').value;
-    
-    // Update invoice with customer details
-    document.getElementById('inv-name').textContent = customerDetails.name;
-    document.getElementById('inv-phone').textContent = customerDetails.phone;
-    document.getElementById('inv-email').textContent = customerDetails.email;
-    
-    alert('Details saved! Now select your courses and click "Calculate total fee"');
-});
+// Handle contact details form submission (only if form exists)
+const form = document.querySelector('form');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent page reload
+        
+        // Get form values
+        customerDetails.name = document.getElementById('name').value;
+        customerDetails.phone = document.getElementById('number').value;
+        customerDetails.email = document.getElementById('email').value;
+        
+        // Update invoice with customer details
+        document.getElementById('inv-name').textContent = customerDetails.name;
+        document.getElementById('inv-phone').textContent = customerDetails.phone;
+        document.getElementById('inv-email').textContent = customerDetails.email;
+        
+        alert('Details saved! Now select your courses and click "Calculate total fee"');
+    });
+}
 
-// Calculate button functionality
-document.getElementById('calculateBtn').addEventListener('click', function() {
+// Calculate button functionality (only if button exists)
+const calculateBtn = document.getElementById('calculateBtn');
+if (calculateBtn) {
+    calculateBtn.addEventListener('click', function() {
     // Check if customer details are filled
     if (!customerDetails.name || !customerDetails.phone || !customerDetails.email) {
         alert('Please submit your contact details first!');
@@ -120,9 +119,8 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
     
     // Scroll to invoice
     document.querySelector('.invoice').scrollIntoView({ behavior: 'smooth' });
-    
-    alert(`Quote calculated successfully! Total: R${finalTotal.toFixed(2)}`);
-});
+  });
+}
 
 /* Set the width of the sidebar to 250px (show it) */
 function openNav() {
