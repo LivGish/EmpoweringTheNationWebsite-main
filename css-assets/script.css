@@ -247,7 +247,7 @@ a.button:hover {
     transition: transform 0.2s, box-shadow 0.2s;
     box-sizing: border-box; /*includes padding and border in the element's total width and height*/
     width: 40%; /*sets the card width*/
-    height:45rem;
+    height:48rem;
 }
 
 .card ul {
@@ -413,7 +413,7 @@ input, textarea {
     margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     
     /* child-minding page: keep main headings centered but left-align body text on small screens */
     .detail p,
@@ -518,21 +518,4 @@ button {
     max-width: 100%;
     padding: 0.5rem;
 }
-}
-
-@media screen and (min-width: 1110px) {
-.card {
-    padding: 2.5rem; /*Adds spacing around the card contents*/
-    width: 40%; /*sets the card width*/
-    height:65rem;
-}
-
-.card img {
-
-    display: inline-block; /*ensure margins apply consistently*/
-    margin: 1rem; /*space around the image so it doesn't touch text*/
-    width: 40rem; /*prevent overflow*/
-    height: auto; /*maintains aspect ratio*/
-    object-fit: contain; /*prevents stretching on large screens*/
-}  
 }
